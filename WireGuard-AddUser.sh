@@ -18,7 +18,7 @@ echo "" >> /etc/wireguard/wg0.conf
 echo "#$user" >> /etc/wireguard/wg0.conf
 echo "[Peer]" >> /etc/wireguard/wg0.conf
 echo "PublicKey = $user_publickey"  >> /etc/wireguard/wg0.conf
-echo "AllowedIPs = $ip_address/24" >> /etc/wireguard/wg0.conf
+echo "AllowedIPs = $ip_address/32" >> /etc/wireguard/wg0.conf
 echo "" >> /etc/wireguard/wg0.conf
 
 
