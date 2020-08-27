@@ -9,11 +9,11 @@ All files stored in **/etc/wireguard**
 
 > chmod +x WireGuard*
 
-> ./WireGuard-Install.sh
+> sudo ./WireGuard-Install.sh
 
 ## To Add WireGuard User
 
-> ./WireGuard-AddUser.sh
+> sudo ./WireGuard-AddUser.sh
 
 ## To re-generate the QR Code
 
