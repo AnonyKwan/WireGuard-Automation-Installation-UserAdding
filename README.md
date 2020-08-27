@@ -1,4 +1,4 @@
-# WireGuad Automation Script
+# WireGuad Automation Script （Debian）
 All files stored in **/etc/wireguard**
 * Public & Private Key
 * Config File
