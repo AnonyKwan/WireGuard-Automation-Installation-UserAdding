@@ -7,6 +7,7 @@ fi
 
 read -p "ASSIGN IP ADDRESS TO THE USER (UNDER YOUR IP RANGE!):  " ip_address
 read -p "USER DESC:  " user
+read -p "Public IP/Domain:  " pub_ip
 
 wg genkey | tee /etc/wireguard/$user'_'$ip_address'_PrivateKey' | wg pubkey > /etc/wireguard/$user'_'$ip_address'_PublicKey'
 
@@ -34,7 +35,7 @@ echo "MTU = 1420" >> /etc/wireguard/$user'_'$ip_address'_Config.conf'
 echo "" >> /etc/wireguard/$user'_'$ip_address'_Config.conf'
 echo "[Peer]" >> /etc/wireguard/$user'_'$ip_address'_Config.conf'
 echo "PublicKey = $server_publickey" >> /etc/wireguard/$user'_'$ip_address'_Config.conf'
-echo "Endpoint = lab.darksec.net:1024" >> /etc/wireguard/$user'_'$ip_address'_Config.conf'
+echo "Endpoint = $pub_ip":1024" >> /etc/wireguard/$user'_'$ip_address'_Config.conf'
 echo "AllowedIPs = 0.0.0.0/0" >> /etc/wireguard/$user'_'$ip_address'_Config.conf'
 
 qrencode -t ansiutf8 < "/etc/wireguard/$user"_"$ip_address"_"Config.conf"
